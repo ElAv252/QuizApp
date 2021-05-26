@@ -1,0 +1,98 @@
+body {
+	background-color: rgb(69, 128, 255);
+	height: 933px;
+}
+
+.MainFrame {
+	position: absolute;
+	top: 150px;
+	left: 730px;
+	border: none;
+	border-radius: 10px;
+	height: 220px;
+	width: 460px;
+	background-color: rgb(13, 90, 255);
+}
+
+.FrameQuestion {
+	position: relative;
+	left: -1px;
+	min-height: 55px;
+	width: 462px;
+	background-color: rgb(199, 199, 253);
+	border-radius:6px;
+	box-shadow: 0px 0px 10px rgb(0, 36, 114);
+	transition-duration: 0.5s;
+}
+.FrameQuestion:hover {
+	transition-duration: 0.5s;
+	box-shadow: -0px -0px 20px rgb(0, 255, 179);
+	background-image: linear-gradient(to right , rgb(68, 218, 168), rgb(0, 255, 55));
+}
+
+.TheQuestion {
+	font-family: cursive;
+	font-size: 40px;
+	padding-left: 10px;
+	word-spacing: 4px;
+}
+
+.FrameAnswers {
+	height: 500px;
+	width: 400px;
+	position: absolute;
+	background-color: rgb(158, 189, 255);
+	left: 760px;
+	top:380px;
+	border-radius:50px;
+	box-shadow: 0px 0px 20px rgb(68, 183, 218);
+}
+
+.Answer {
+	position: relative;
+	top: 30px;
+	left: 34%;
+	font-size: 55px;
+	height: 65px;
+	min-width: 150px;
+	background-color: rgb(13, 90, 255);
+	border: none;
+	border-radius: 10px;
+	cursor: pointer;
+}
+
+.Answer:hover {
+	transition-duration: 0.3s;
+	box-shadow: 7px 5px 10px rgb(49, 49, 49);
+}
+
+.Answer:active {
+	transition-duration: 0s;
+	background-color: rgb(13, 30, 255);
+}
+
+.CorrectAnswer {
+	display: none;
+	height: 200px;
+	width: 400px;
+	background-color: rgba(190, 163, 233, 0.76);
+	position: absolute;
+	top: 350px;
+	left:724px;
+}
+
+ul {
+list-style-type: none;
+padding: 0px;
+margin: 0px;
+}
+
+li .Answer {
+	width: inherit;
+}
+
+.NumberOfQuestion {
+	margin: 10px 0px 0px 418px;
+	width: 35px;
+	text-align: center;
+}
