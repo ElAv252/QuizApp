@@ -1,63 +1,56 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import CorrectAnswer from './CorrectAnswer';
 
+/*
 
+*TODO*
 
-function Answer(props) {
+*What question I am in.✔️
+*Show correct answer and wrong answer.
 
-    const Answer1 = document.getElementsByClassName('Answer');
+*/
+
+export default function Answer(props) {
+
+    //const [correctAnswer, setCorrectAnswer] = useState(<CorrectAnswer />)
 
     const Answers = [
-        { answer: ['1', ' 2', '4', '3'] },
+        { answer: ['1', '2', '5', '3'] },
         { answer: ['2', '4', '8', '5'] },
         { answer: ['12', '10', '9', '7'] },
         { answer: ['26', '20', '25', '10'] }
     ];
 
-    function correctAnswersHandler() { // This function is Handler in the correct Answers.
-        if (props.index < 3) {
+    function questionHandler(e) {
+        if (e.target.innerHTML === '1') {
             props.setIndex(props.index + 1);
-        } else {
-            props.setIndex(3);
+        }
+        else if (e.target.innerHTML === '4') {
+            props.setIndex(props.index + 1);
+        }
+        else if (e.target.innerHTML === '12') {
+            props.setIndex(props.index + 1);
+        }
+        else if (e.target.innerHTML === '12') {
+            props.setIndex(props.index + 1);
+        }
+        else if (e.target.innerHTML !== '1' || '4' || '12') {
+            console.log('sas')
         }
     };
 
-    function wrongAnswersHandler() { // This function is Handler in the wrong Answers.
+    //useEffect(() => setCorrectAnswer(<CorrectAnswer />), [])
+
+    /*function wrongAnswersHandler() { // This function is Handler in the wrong Answers.
         Object.keys(Answer1).map((value, key) => {
             return Answer1[key].addEventListener('click', () => console.log('wrong'), { once: true })
         })
-    };
+    };*/
 
-    function NextQuestion() { // This function, is give the next question.
-        if (Answer1[0].innerHTML === '1') {
-
-            Answer1[0].addEventListener('click', correctAnswersHandler, { once: true })
-            wrongAnswersHandler()
-
-        } else if (Answer1[1].innerHTML === '4') {
-
-            Answer1[1].addEventListener('click', correctAnswersHandler, { once: true })
-            wrongAnswersHandler()
-
-        } else if (Answer1[0].innerHTML === '12') {
-
-            Answer1[0].addEventListener('click', correctAnswersHandler, { once: true })
-            wrongAnswersHandler()
-
-        } else if (Answer1[2].innerHTML === '25') {
-
-            wrongAnswersHandler()
-            Answer1[2].addEventListener('click', correctAnswersHandler, { once: true })
-
-        }
-    }
-
-    useEffect(NextQuestion)
-
-    const theAnswers = Answers[props.index].answer.map((value, key) => { // Returns list of the buttons with the answers.
+    const TheAnswers = Answers[props.index].answer.map((value, key) => { // Returns list of the buttons with the answers.
         return (
             <li key={key} >
-                <button className="Answer" name="answer">
+                <button className="Answer" name="answer" onClick={questionHandler} >
                     {value}
                 </button>
                 <br /><br /><br />
@@ -65,14 +58,16 @@ function Answer(props) {
         )
     });
 
+    const correctAnswer = <CorrectAnswer />
+
     return (
         <React.Fragment>
             <div className="FrameAnswers">
                 <ul>
-                    {theAnswers}
+                    {TheAnswers}
                 </ul>
             </div>
-            <CorrectAnswer />
+            {correctAnswer}
         </React.Fragment>
     )
 };
