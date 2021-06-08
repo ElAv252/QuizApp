@@ -6,7 +6,7 @@ export default function Question(props) {
     return (
         <div className="MainFrame">
             <p className="NumberOfQuestion">{props.index + 1/*Displays the current question*/}/4</p>
-            <div className="FrameQuestion">
+            <div className="FrameQuestion" >
                 <p className="TheQuestion" >{Questions[props.index]}</p>
             </div>
         </div>
