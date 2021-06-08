@@ -1,15 +1,14 @@
 body {
 	background-color: rgb(69, 128, 255);
-	height: 933px;
 }
 
 .MainFrame {
 	position: absolute;
 	top: 150px;
-	left: 730px;
+	left: 38.50%;
 	border: none;
 	border-radius: 10px;
-	height: 220px;
+	height: 200px;
 	width: 460px;
 	background-color: rgb(13, 90, 255);
 }
@@ -31,18 +30,17 @@ body {
 }
 
 .TheQuestion {
-	font-family: cursive;
 	font-size: 40px;
 	padding-left: 10px;
 	word-spacing: 4px;
 }
 
 .FrameAnswers {
-	height: 500px;
+	height: 450px;
 	width: 400px;
 	position: absolute;
 	background-color: rgb(158, 189, 255);
-	left: 760px;
+	left: 40%;
 	top:380px;
 	border-radius:50px;
 	box-shadow: 0px 0px 20px rgb(68, 183, 218);
@@ -72,13 +70,15 @@ body {
 }
 
 .CorrectAnswer {
-	display: none;
+	display: block;
 	height: 200px;
-	width: 400px;
-	background-color: rgba(190, 163, 233, 0.76);
+	width: 415px;
+	background-image: linear-gradient(to right , rgb(68, 218, 168), rgb(0, 255, 55));
 	position: absolute;
-	top: 350px;
-	left:724px;
+	top: 410px;
+	left:39.60%;
+	border-radius: 5px;
+	box-shadow: -0px -0px 20px rgb(0, 255, 179);
 }
 
 ul {
@@ -96,3 +96,89 @@ li .Answer {
 	width: 35px;
 	text-align: center;
 }
+
+.CorrectAnswerButton {
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	top: 55%;
+	background-color: rgb(0, 255, 179);
+	border: none;
+	border-radius: 9px;
+	left: 0px;
+	cursor: pointer;
+	transition-duration: 0.5s;
+	font-size: 150%;
+}
+
+.CorrectAnswerButton:hover {
+	box-shadow: -0px -0px 20px rgb(0, 255, 179);
+	background-color: rgb(9, 255, 0);
+	font-size: 200%;
+}
+
+.WrongAnswer {
+	display: block;
+	height: 200px;
+	width: 415px;
+	background-image: linear-gradient(to right , rgb(218, 68, 68), rgb(255, 0, 0));
+	position: absolute;
+	top: 410px;
+	left:39.60%;
+	border-radius: 5px;
+	box-shadow: -0px -0px 20px rgb(255, 0, 0);
+}
+
+.WrongAnswerButton {
+	width: 100%;
+	height: 80px;
+	position: absolute;
+	top: 55%;
+	background-color: rgb(204, 0, 0);
+	border: none;
+	border-radius: 9px;
+	left: 0px;
+	cursor: pointer;
+	transition-duration: 0.5s;
+	font-size: 150%;
+}
+
+.WrongAnswerButton:hover {
+	box-shadow: -0px -0px 20px rgb(255, 0, 0);
+	background-color: rgb(255, 0, 0);
+	font-size: 200%;
+}
+
+.successOrFailure {
+	text-align: center;
+	font-size: 35px;
+}
+
+.MsgFinish {
+	position: relative;
+	top: -15%;
+	left: 14%;
+	font-size: 20px;
+}
+
+@media only screen and (max-width: 800px) {
+	.MainFrame {
+		left: 1%;
+	}
+
+	.FrameAnswers {
+		left: 8%;
+	}
+
+	.CorrectAnswer {
+		left:6.50%;
+	}
+
+	.WrongAnswer {
+		left:6.50%;
+	}
+
+	.Answer {
+		font-size: 45px;
+	}
+  }
